@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(224, 224, 224);
+    display: flex;
+}
+
+#timer {
+    justify-content: center;
+    width: 768px;
+    height: 300px;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.158);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.315);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.692);
+}
+
+#display {
+    font-size: 60px;
+    color: rgb(49, 49, 49);
+    font-weight: 1600;
+    border-color: rgb(238, 233, 233);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    margin: 5px;
+    width: 75px;
+    height: 30px;
+    border-radius: 7px;
+    transition: 0.1s;
+}
+
+#start {
+    background-color: rgb(15, 155, 15);
+}
+
+#start:hover {
+    background-color: rgb(17, 196, 17);
+    transform: translateY(2px);
+}
+
+#pause {
+    background-color: rgb(107, 107, 107);
+}
+
+#pause:hover {
+    background-color:  rgb(165, 165, 165);
+    transform: translateY(2px);
+}
+
+#clean {
+    background-color: rgb(172, 19, 19);
+    width: 85px;
+}
+
+#clean:hover {
+    background-color: rgb(223, 41, 41);
+    transform: translateY(2px);
+}
+
+@media(min-width=768px) {
+    #timer_container {
+        width: 768px;
+
+    }
+}

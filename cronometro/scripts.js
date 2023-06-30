@@ -1,41 +1,63 @@
+// criando variaveis para usar-las globalmente dentro das funções
 var display = document.getElementById('display');
 var interval;
 var seconds = 0;
 var minutes = 0;
 var hours = 0;
-function zero(number) {
+var interval = null;
+var timer_history = document.getElementById('timer_history');
+
+
+/* função para incrementar '0' ao elementos númericos do crônometro
+que forem menores que 10 */
+function Zero(number) {
     if (number < 10) {
         return ('0' + number)
-    }
-    else {
+    } else {
         return (number)
     }
 }
-function counter() {
+
+/* a função Count irá incrementar os segundos, minutos e horas em um 
+intervalo de 1 segundo definido pela função start, com condições definidas de 
+forma a simular uma contagem real de tempo*/
+function Count() {
     seconds++;
+
     if (seconds === 60) {
         minutes++;
         seconds = 0;
     }
+
     if (minutes === 60) {
         hours++;
         minutes = 0;
     }
-    display.innerText = zero(hours) + ':' + zero(minutes) + ':' + zero(seconds);
+
+    display.innerText = Zero(hours) + ':' + Zero(minutes) + ':' + Zero(seconds);
 }
-function start() {
-    interval = setInterval(counter, 1000);
-    console.log('Counter has been start');
+
+function Start() {
+    if (interval === null) {
+        interval = setInterval(Count, 1000);
+        console.log('Cronômetro iniciado');
+    }
 }
-function pause() {
+
+function Pause() {
     clearInterval(interval);
-    console.log('Counter has been pause');
+    interval = null;
+    console.log('Cronômetro pausado');
+
 }
-function reset(interval) {
+
+function Clean() {
     clearInterval(interval);
-    display.innerText = '00:00:00';
     seconds = 0;
     minutes = 0;
     hours = 0;
-    console.log('Counter has been reset');
+    display.innerHTML = '00:00:00'
+    interval = null;
+
+    console.log('Cronômetro resetado');
 }
