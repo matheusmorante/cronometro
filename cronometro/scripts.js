@@ -1,4 +1,4 @@
-// criando variaveis para usar-las globalmente dentro das funções
+// criando variaveis para sd manipular dentro das funções definidas adiante
 var display = document.getElementById('display');
 var interval;
 var seconds = 0;
@@ -8,8 +8,8 @@ var interval = null;
 var timer_history = document.getElementById('timer_history');
 
 
-/* função para incrementar '0' ao elementos númericos do crônometro
-que forem menores que 10 */
+/* função para incrementar '0' ao elementos númericos do crônometroque forem menores
+ que 10 */
 function Zero(number) {
     if (number < 10) {
         return ('0' + number)
@@ -19,9 +19,9 @@ function Zero(number) {
 }
 
 /* A função Count() irá incrementar os segundos, minutos e horas, com condições 
-definidas de forma a simular uma contagem de tempo. A função Count() é executada
- em intervalo de 1 segundo através função global setInterval() chamada pela função 
- Start().  */
+definidas de forma a simular uma contagem de tempo. Essa função é executada
+ em intervalo de 1 segundo através função global setInterval(), sendo essa ultima 
+ chamada pela função Start(). */
 function Count() {
     seconds++;
 
@@ -39,7 +39,8 @@ function Count() {
 }
 
 /* A função Start() é executado ao clicar no botão 'Início', ela verifica se não há
-outra contagem sendo feita para então iniciar de fato uma contagem */
+outra contagem sendo executada no momento (através da condição de a variavel interval
+ ser nula) para então iniciar de fato uma contagem */
 function Start() {
     if (interval === null) {
         interval = setInterval(Count, 1000);
@@ -47,22 +48,29 @@ function Start() {
     }
 }
 
-/* A Função Pause() será executada quando o botão 'Pause' for clicado, ela chamará a função 
-Clearinterval() que cancelará a contagem, no entanto sem zerar os valores */
+/* A Função Pause() será executada quando o botão 'Pause' for clicado, ela chamará a 
+função Clearinterval() que interromperá a contagem, no entanto sem zerar os valores de 
+tempo. Além disso, anulará o valor da variavel i
+
+ */
 function Pause() {
     clearInterval(interval);
     interval = null;
     console.log('Cronômetro pausado');
-
 }
 
+/* A função Clean() é chamada ao clicar no botão 'Limpar' e executará o interrompimento 
+da contagem assim como o Pause(), no entanto, além disso, irá zerar os valores de segundos,
+ minutos e horas para próxima contagem ser iniciada do zero, também irá zerar o atual 
+ display, por fim, irá anular o valor da variavel interval para que possa ser iniciado uma
+  nova contagem através do botão 'Start' */
 function Clean() {
     clearInterval(interval);
     seconds = 0;
     minutes = 0;
     hours = 0;
-    display.innerHTML = '00:00:00'
     interval = null;
+    display.innerHTML = '00:00:00';
 
-    console.log('Cronômetro resetado');
+    console.log('Cronômetro ');
 }
