@@ -18,9 +18,10 @@ function Zero(number) {
     }
 }
 
-/* a função Count irá incrementar os segundos, minutos e horas em um 
-intervalo de 1 segundo definido pela função start, com condições definidas de 
-forma a simular uma contagem real de tempo*/
+/* A função Count() irá incrementar os segundos, minutos e horas, com condições 
+definidas de forma a simular uma contagem de tempo. A função Count() é executada
+ em intervalo de 1 segundo através função global setInterval() chamada pela função 
+ Start().  */
 function Count() {
     seconds++;
 
@@ -37,6 +38,8 @@ function Count() {
     display.innerText = Zero(hours) + ':' + Zero(minutes) + ':' + Zero(seconds);
 }
 
+/* A função Start() é executado ao clicar no botão 'Início', ela verifica se não há
+outra contagem sendo feita para então iniciar de fato uma contagem */
 function Start() {
     if (interval === null) {
         interval = setInterval(Count, 1000);
@@ -44,6 +47,8 @@ function Start() {
     }
 }
 
+/* A Função Pause() será executada quando o botão 'Pause' for clicado, ela chamará a função 
+Clearinterval() que cancelará a contagem, no entanto sem zerar os valores */
 function Pause() {
     clearInterval(interval);
     interval = null;
