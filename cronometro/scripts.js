@@ -1,14 +1,13 @@
-// criando variaveis para sd manipular dentro das funções definidas adiante
+// criando variaveis para as manipular dentro das funções definidas adiante
 var display = document.getElementById('display');
 var interval;
 var seconds = 0;
 var minutes = 0;
 var hours = 0;
 var interval = null;
-var timer_history = document.getElementById('timer_history');
 
 
-/* função para incrementar '0' ao elementos númericos do crônometroque forem menores
+/* função para incrementar '0' ao elementos númericos do crônometro que forem menores
  que 10 */
 function Zero(number) {
     if (number < 10) {
@@ -59,18 +58,17 @@ function Pause() {
     console.log('Cronômetro pausado');
 }
 
-/* A função Clean() é chamada ao clicar no botão 'Limpar' e executará o interrompimento 
+/* A função Reset() é chamada ao clicar no botão 'Reset' e executará o interrompimento 
 da contagem assim como o Pause(), no entanto, além disso, irá zerar os valores de segundos,
  minutos e horas para próxima contagem ser iniciada do zero, também irá zerar o atual 
  display, por fim, irá anular o valor da variavel interval para que possa ser iniciado uma
   nova contagem através do botão 'Start' */
-function Clean() {
+function Reset() {
     clearInterval(interval);
     seconds = 0;
     minutes = 0;
     hours = 0;
     interval = null;
     display.innerHTML = '00:00:00';
-
-    console.log('Cronômetro ');
+    console.log('Cronômetro resetado');
 }

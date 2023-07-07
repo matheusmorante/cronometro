@@ -1,13 +1,13 @@
 /* Define a cor de fundo do corpo da página */
 body {
     background-color: rgb(224, 224, 224);
-    display: flex;
+    margin: 0;
 }
 
 /* Define o estilo do timer */
 #timer {
-    width: 95%;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
     border: 2px solid rgba(0, 0, 0, 0.158);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.315);
@@ -17,7 +17,7 @@ body {
 
 /* Define o estilo do display */
 #display {
-    font-size: 80px;
+    font-size: 70px;
     color: rgb(49, 49, 49);
     border-color: rgb(238, 233, 233);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -31,9 +31,9 @@ button {
     font-weight: bold;
     border: none;
     margin: 5px;
-    width: 100px;
-    height: 45px;
-    border-radius: 7px;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
     transition: 0.1s;
 }
 
@@ -47,8 +47,8 @@ button {
     background-color: rgb(107, 107, 107);
 }
 
-/* Define o estilo do botão de clean */
-#clean {
+/* Define o estilo do botão de reset */
+#reset {
     background-color: rgb(172, 19, 19);
 }
 
@@ -63,19 +63,20 @@ button {
     transform: translateY(2px);
 }
 
-#clean:hover {
-    background-color: rgb(223, 41, 41);
+#reset:hover {
+    background-color: rgb(255, 87, 87);
     transform: translateY(2px);
 }
 
-/* Define o estilo do timer_container quando a tela tem pelo menos largura de tela de desktop (768 pixels) */
-@media (min-width = 1200px) {
-    #timer {
-        width: 1200px;
-
-    }
+/* Define o estilo do timer quando a tela tem pelo menos largura de 769 pixels */
+@media screen and (min-width: 769px) {
     #display {
-        font-size: 170px;
+        font-size: 130px;
+    }
     
+    button {
+        width: 175px;
+        height: 65px;
+        font-size: 35px;
     }
 }
