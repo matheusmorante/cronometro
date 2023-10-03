@@ -1,115 +1,131 @@
-/* Define a cor de fundo do corpo da página */
+/* Define a cor de fundo do corpo da página e regras gerais para todos os elementos */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box; /* Define o modelo de caixa para incluir margens e bordas */
 }
 
-/* Define o estilo do timer */
-#timer {
-    margin: 0 auto;
+/* Define o estilo do corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a altura total da janela de visualização */
 }
 
-/* Define o estilo do display */
+/* Define o estilo do display principal */
 #display {
     display: flex;
-    margin: 20px auto;
     justify-content: center;
     align-items: center;
     color: rgb(49, 49, 49);
     border-radius: 50%;
-    border: 7px solid black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Define o estilo dos botões */
-#buttons{
+/* Define o estilo dos botões de controle */
+#buttons {
     display: flex;
-    margin-top: 20px;
-    justify-content: center;
 }
 
-#buttons div{
-    padding: 20px;
-    margin: 10px;
-}
-
-/* Define o estilo para os botões de inicio, pause e resete */
-#start, #pause, #reset {
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    transition: 100ms;
-}
-
-/* Define o estilo do botão de inicio */
-#start{
-    background-color: rgb(22, 114, 35);
-} 
-
-
-/* Define o estilo do botão de pause */
-#pause {
-    background-color: rgb(56, 96, 170);
-}
-
-/* Define o estilo do botão de resete */
+/* Define o estilo para os botões de início, pausa e reset */
+#start,
+#pause,
 #reset {
-    background-color: rgb(141, 80, 80);
+    border-radius: 50%;
+    transition: 100ms; /* Transição suave de 100 milissegundos para animações */
+}
+
+/* Define o estilo do botão de início */
+#start {
+    background-color: rgb(50, 160, 65);
+}
+
+/* Define o estilo do botão de pausa */
+#pause {
+    background-color: rgb(83, 139, 245);
+}
+
+/* Define o estilo do botão de reset */
+#reset {
+    background-color: rgb(255, 87, 87);
 }
 
 /* Define o estilo dos botões quando passam o mouse por cima */
 #start:hover {
+    background-color: rgb(22, 114, 35);
+    transform: translateY(3px); /* Efeito de levantamento quando hover */
+}
+
+#start:active {
     background-color: rgb(50, 160, 65);
-    transform: translateY(3px);
 }
 
 #pause:hover {
-    background-color: rgb(83, 139, 245);
+    background-color: rgb(56, 96, 170);
     transform: translateY(3px);
+}
+
+#pause:active {
+    background-color: rgb(83, 139, 245);
 }
 
 #reset:hover {
-    background-color: rgb(255, 87, 87);
+    background-color: rgb(141, 80, 80);
     transform: translateY(3px);
 }
 
-/* Define o estilo do cronômetro quando a tela tiver pelo menos
- 769 pixels de largura */
-@media (max-width: 500px) {
-    #timer {
-        justify-content: center;
+#reset:active {
+    background-color: rgb(255, 87, 87);
+}
+
+/* Define o estilo do cronômetro quando a tela tiver largura menor que 768 pixels */
+@media (max-width: 767px) {
+
+    body {
+        justify-content: space-around;
     }
 
     #display {
-        font-size: 60px;
-        width: 300px ;
-        height: 300px;
+        font-size: 55px;
+        width: 280px;
+        height: 280px;
+        border: 2px solid rgb(0, 0, 0);
     }
 
-    #buttons div{
-        padding: 25px;
+    #buttons div {
+        padding: 30px;
+        margin: 10px;
     }
 
-   img {
-        width: 40px;
-        height: 40px;
+    img {
+        width: 30px;
+        height: 30px;
     }
 }
 
-@media only screen and (min-width: 501px) {
+/* Define o estilo do cronômetro quando a tela tiver largura igual ou maior que 768 pixels */
+@media (min-width: 768px) {
+
     #display {
-        font-size: 100px;
+        font-size: 90px;
         width: 500px;
         height: 500px;
+        border: 5px solid rgb(0, 0, 0);
     }
 
-    #buttons div{
+    #buttons {
+        margin-top: 50px;
+    }
+
+    #buttons div {
         padding: 40px;
+        margin: 15px;
     }
 
-   img {
+    img {
         width: 80px;
         height: 80px;
     }

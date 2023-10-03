@@ -5,11 +5,11 @@
     <title>Cronômetro</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <!-- container que conterá o display e os botões-->
-    <div id="timer">
         <!-- container para caber o conteudo de contagem do display -->
         <div id="display">00:00:00</div>
         <!-- definição do container para os botões e dos botões do cronômetro 
@@ -17,7 +17,7 @@
          resetar a contagem do display -->
         <div id="buttons">
             <div id="start">
-                <img src="images\play.png"  onclick="Start()">
+                <img src="images\play.png" onclick="Start()">
             </div>
             <div id="pause">
                 <img src="images\pause.png" onclick="Pause()">
@@ -26,7 +26,6 @@
                 <img src="images\reset.png" onclick="Reset()">
             </div>
         </div>
-    </div>
     <script src="scripts.js"></script>
 </body>
 
