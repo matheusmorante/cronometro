@@ -30,8 +30,8 @@ Para utilizar o cronômetro, siga os passos abaixo:
 
 2. Você verá o display do cronômetro mostrando "00:00:00" e três botões: Iniciar, Pausar e Resetar.
 
-3. Clique no botão "Iniciar" para começar a contagem.
+3. Clique no botão verde "Iniciar" para começar a contagem.
 
-4. Clique no botão "Pausar" para interromper a contagem temporariamente.
+4. Clique no botão azul "Pausar" para interromper a contagem temporariamente.
 
-5. Clique no botão "Resetar" para zerar o cronômetro e reiniciar a contagem.
+5. Clique no botão vermelho "Resetar" para zerar o cronômetro e reiniciar a contagem.
